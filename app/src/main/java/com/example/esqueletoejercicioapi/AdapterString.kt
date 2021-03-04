@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class AdapterString(private var datos : List<String>) : RecyclerView.Adapter<AdapterString.StringViewHolder>()  {
+class AdapterString : RecyclerView.Adapter<AdapterString.StringViewHolder>()  {
 
+    private var datos  = listOf<String>()
 
     class StringViewHolder(val root: View, val textView: TextView) : RecyclerView.ViewHolder(root)
 
@@ -25,7 +26,7 @@ class AdapterString(private var datos : List<String>) : RecyclerView.Adapter<Ada
         if (position%2 ==0){
             holder.root.setBackgroundColor(ContextCompat.getColor(holder.root.context, R.color.design_default_color_primary_variant))
         } else {
-            holder.root.setBackgroundColor(ContextCompat.getColor(holder.root.context, R.color.design_default_color_primary_variant))
+            holder.root.setBackgroundColor(ContextCompat.getColor(holder.root.context, R.color.material_on_primary_disabled))
         }
 
     }
